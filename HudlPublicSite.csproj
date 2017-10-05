@@ -69,6 +69,7 @@
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\lightgallery.css" />
     <Content Include="css\templatemo-style.css" />
     <Content Include="favicon.ico" />
     <Content Include="images\contact-bg.jpg" />
@@ -88,6 +89,7 @@
     <Content Include="js\custom.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.singlePageNav.min.js" />
+    <Content Include="js\lightgallery-all.min.js" />
     <Content Include="js\wow.min.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
