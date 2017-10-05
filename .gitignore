@@ -1,0 +1,5 @@
+.vs/config/applicationhost.config
+bin/
+images/editing/
+obj/
+packages/
