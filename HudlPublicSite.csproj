@@ -72,6 +72,7 @@
     <Content Include="css\templatemo-style.css" />
     <Content Include="favicon.ico" />
     <Content Include="images\contact-bg.jpg" />
+    <Content Include="images\contactusimage.jpg" />
     <Content Include="images\dashboard.png" />
     <Content Include="images\home-bg.jpg" />
     <Content Include="images\logo.png" />
@@ -79,6 +80,7 @@
     <Content Include="images\macbookdocument.png" />
     <Content Include="images\macbookmeeting.png" />
     <Content Include="images\macbooktasklist.png" />
+    <Content Include="images\mobile-phone-572863_1920.jpg" />
     <Content Include="images\mobile-phone-572865_1920.jpg" />
     <Content Include="images\software-img.png" />
     <Content Include="index.html" />
