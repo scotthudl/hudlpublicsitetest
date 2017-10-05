@@ -15,3 +15,7 @@ $(function() {
         $(".navbar-collapse").collapse('hide');
     });
 })
+
+$(document).ready(function () {
+    $(".lightgallery").lightGallery();
+});
