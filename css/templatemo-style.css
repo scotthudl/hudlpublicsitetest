@@ -455,3 +455,7 @@ footer
         }
 }
 /* end media 360 */
+
+.whiteanchor, .whiteanchor:hover, .whiteanchor:active, .whiteanchor:focus {
+    color: #ffffff;
+}
