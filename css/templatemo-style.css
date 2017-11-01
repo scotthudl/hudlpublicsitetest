@@ -71,6 +71,12 @@ img {
         width: 1000px;
     }
 }
+
+@media (min-width: 1500px) {
+    .container.widercontainer {
+        width: 1300px;
+    }
+}
 /* end page container */
 
 /* start preloader */
@@ -230,7 +236,7 @@ img {
     padding-bottom: 80px;
 }
 
-    #feature p {
+    #feature p, #benefits p {
         padding-top: 10px;
     }
 
@@ -238,7 +244,7 @@ img {
         float: left;
     }
 
-    #feature .fa {
+    #feature .fa, #benefits .fa {
         background: #28a7e9;
         border-radius: 50%;
         color: #fff;
@@ -491,35 +497,67 @@ footer {
     z-index: 200;
 }
 
-.floating-top-image.xs {
-    width: 100%;
-    position: static;
-    margin-bottom: 30px;
-    margin-top: 0;
-}
+    .floating-top-image.xs {
+        width: 100%;
+        position: static;
+        margin-bottom: 30px;
+        margin-top: 0;
+    }
 
-.floating-top-image.xs > a > img.img-responsive {
-    margin-top: 0;
-}
+        .floating-top-image.xs > a > img.img-responsive {
+            margin-top: 0;
+        }
 
-.floating-top-image.sm {
-    top: 190px;
-}
+    .floating-top-image.sm {
+        top: 190px;
+    }
 
-.floating-top-image.md {
-    width: 80%;
-    top: 140px;
-    width: 720px;
-    left: calc(50% + -360px);
-}
+    .floating-top-image.md {
+        width: 80%;
+        top: 140px;
+        width: 720px;
+        left: calc(50% + -360px);
+    }
 
-.floating-top-image.lg {
-    width: 80%;
-    top: 140px;
-    width: 1000px;
-    left: calc(50% + -500px);
-}
+    .floating-top-image.lg {
+        width: 80%;
+        top: 140px;
+        width: 1000px;
+        left: calc(50% + -500px);
+    }
 
 .tm-white.xs.subheader {
     margin-bottom: 0 !important;
 }
+
+/* start benefits */
+#benefits {
+    background-color: #fff;
+    color: #000;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    text-align: center;
+    width: 100%;
+}
+
+    #benefits .overlay {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #ffffff;
+        text-align: left;
+    }
+
+.benefit-box {
+    padding: 10px;
+}
+
+.benefit-box-inner {
+    margin: 10px;
+    border: 1px dashed #eeeeee;
+    padding: 0 20px 10px 20px;
+}
+
+.benefit-header h2 {
+    margin-bottom: 10px;
+}
+/* end benefits */
