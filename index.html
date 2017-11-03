@@ -5,8 +5,8 @@
     <title>Hudl.cloud</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <meta name="description" content="A task management system that aims to simplify the management of bodies corporate for both trustees and managing agents." />
+    <meta name="keywords" content="task management, to do lists, project management, bodies corporate, body corporates, meeting minutes" />
 
     <!-- animate css -->
     <link rel="stylesheet" href="css/animate.min.css">
@@ -177,7 +177,7 @@
                 <div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                     <h2 class="text-uppercase">Centralized Documents</h2>
                     <p>Hudl.cloud includes a centralized storage system for all of your property-specific files.</p>
-                    <p><span><i class="fa fa-check"></i></span>Upload and share anything, from lease agreements to management contracts to tenant rulebooks./</p>
+                    <p><span><i class="fa fa-check"></i></span>Upload and share anything, from lease agreements to management contracts to tenant rulebooks.</p>
                     <p><i class="fa fa-check"></i>Share, manage and track your files with ease.</p>
                 </div>
             </div>
@@ -205,7 +205,7 @@
         </div>
     </section>
     <!-- end feature -->
-    <!-- start benegits -->
+    <!-- start benefits -->
     <section id="benefits">
         <div class="overlay">
             <div class="container widercontainer">
@@ -296,36 +296,44 @@
                         </address>
                     </div>
                     <div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="contact-form">
-                            <form action="#" method="post">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control br5" placeholder="Name">
+                        <div id="contactusWrapper">
+                            <div id="getintouch">
+                                <div class="contact-form">
+                                    <form action="ajax/submit.php"" method="post" id="contactus">
+                                        <div class="col-md-6">
+                                            <input name="name" type="text" class="form-control br5" placeholder="Name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input name="email" type="email" class="form-control br5" placeholder="Email" required>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input name="subject" type="text" class="form-control br5" placeholder="Subject" required>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea name="message" class="form-control br5" placeholder="Message" rows="4" required></textarea>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="submit" class="form-control text-uppercase" value="Send">
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control br5" placeholder="Email">
-                                </div>
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control br5" placeholder="Subject">
-                                </div>
-                                <div class="col-md-12">
-                                    <textarea class="form-control br5" placeholder="Message" rows="4"></textarea>
-                                </div>
-                                <div class="col-md-8">
-                                    <input type="submit" class="form-control text-uppercase" value="Send">
-                                </div>
-                            </form>
+                            </div>
+						
+                            <div id="thankyou" style="display: none;"><h1>Thank you</h1><h2>We'll be in touch soon</h2></div>
+						
+						
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- end contact -->
     <!-- start footer -->
     <footer>
         <div class="container">
             <div class="row">
-                <p>Copyright © 2017 Hudl Solutions Pty Ltd</p>
+                <p>Copyright © <?php echo date('Y'); ?> Hudl Solutions Pty Ltd</p>
             </div>
         </div>
     </footer>
@@ -336,10 +344,69 @@
     <script src="js/wow.min.js"></script>
     <script src="js/jquery.singlePageNav.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/validatr.min.js"></script>
+    
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 
     <!-- lightgallery plugins -->
     <script src="js/lightgallery-all.min.js"></script>
+
+    <script>
+        jQuery(function ($) {
+            $('#contactus').validatr();
+
+            $('#contactus').on('submit', function () {
+
+                var fewSeconds = 5;
+                var btn = $('#submit');
+                btn.prop('disabled', true);
+                setTimeout(function () {
+                    btn.prop('disabled', false);
+                }, fewSeconds * 1000);
+
+                var data = $(this).serialize();
+
+                $('html, body').animate({
+                    scrollTop: $("#contactusWrapper").offset().top
+                }, 300);
+
+                $.post("ajax/submit.php", { data: data })
+                    .done(function (data) {
+                        if (data == 'success') {
+
+                            $('#getintouch').hide();
+                            $('#thankyou').show();
+
+                            setTimeout(function () {
+                                $('#getintouch input[type=text],#getintouch textarea').val('');
+                                $('#getintouch').show();
+                                $('#thankyou').hide();
+
+                                $("html, body").animate({ scrollTop: 0 }, "slow");
+                            }, 5000);
+
+                        }
+                    });
+
+                return false;
+            });
+
+        });
+
+    </script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-88785624-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
 </body>
 </html>
